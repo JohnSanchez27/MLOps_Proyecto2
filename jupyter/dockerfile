@@ -1,0 +1,19 @@
+# Usar la imagen base de Python 3.7
+FROM python:3.7
+
+# Definir argumentos para la configuración de MinIO en MLflow
+ARG MLFLOW_S3_ENDPOINT_URL=http://minio:8081  # URL del servidor MinIO
+ARG AWS_ACCESS_KEY_ID=supersecretaccess2025  # Clave de acceso para MinIO
+ARG AWS_SECRET_ACCESS_KEY=supersecretaccess2025  # Clave secreta para MinIO
+
+# Crear un directorio de trabajo en el contenedor
+RUN mkdir /work
+
+# Copiar el archivo de dependencias al contenedor
+COPY ./requirements.txt /tmp/requirements.txt
+
+# Instalar Jupyter y JupyterLab en versiones específicas
+RUN pip install jupyter==1.0.0 -U && pip install jupyterlab==3.6.1
+
+# Instalar las dependencias listadas en requirements.txt
+RUN pip install -r requirements.txt

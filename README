@@ -1,0 +1,73 @@
+# PROYECTO_2
+
+Este repositorio contiene un sistema basado en Python para la gestión, procesamiento y análisis de datos utilizando Airflow, Jupyter, Streamlit y MLflow. Está estructurado en distintos módulos para backend, frontend, orquestación de tareas y almacenamiento de modelos.
+
+## Estructura del Proyecto
+
+### 1. **app_back**
+   - `cargar_modelos.py`: Script para cargar modelos en el sistema.
+   - `dockerfile`: Contenedor para la parte backend.
+   - `main.py`: Archivo principal del backend.
+   - `requirements`: Dependencias necesarias para el backend.
+
+### 2. **app_front**
+   - `app_streamlit.py`: Interfaz de usuario desarrollada en Streamlit.
+   - `dockerfile`: Configuración del contenedor frontend.
+   - `requirements`: Dependencias necesarias para el frontend.
+
+### 3. **dags**
+   - `consumir_api.py`: DAG de Airflow para consumir datos de una API externa.
+
+### 4. **imagenes**
+   - Carpeta destinada para el almacenamiento de imágenes utilizadas en el proyecto.
+
+### 5. **jupyter**
+   - `datos/covertype.csv`: Archivo CSV con datos para análisis.
+   - `dockerfile`: Configuración del entorno Jupyter.
+   - `modelo.ipynb`: Notebook de Jupyter con análisis y modelos de machine learning.
+   - `requirements`: Dependencias necesarias para Jupyter.
+
+### 6. **minio_data**
+   - Carpeta utilizada para almacenamiento en MinIO.
+
+### 7. **mlflow**
+   - `dockerfile`: Configuración del entorno MLflow.
+   - `requirements`: Dependencias necesarias para MLflow.
+
+### 8. **Archivos raíz**
+   - `docker-compose.yml`: Archivo de configuración para la orquestación de los contenedores Docker.
+   - `README`: Documentación del proyecto.
+
+## Instalación y Ejecución
+
+### 1. **Configuración del entorno**
+Clonar el repositorio y ubicarse en el directorio principal:
+```bash
+git clone <URL_REPO>
+cd PROYECTO_2
+```
+
+### 2. **Levantando los servicios con Docker Compose**
+Ejecutar el siguiente comando para iniciar los contenedores:
+```bash
+docker-compose up --build
+```
+
+### 3. **Acceso a los servicios**
+- **Jupyter Notebook**: Disponible en `http://localhost:8888`
+- **Streamlit**: Disponible en `http://localhost:8501`
+- **MLflow**: Disponible en `http://localhost:5000`
+- **Airflow**: Disponible en `http://localhost:8080`
+
+## Dependencias Principales
+- Python 3.7
+- Apache Airflow
+- Jupyter
+- Streamlit
+- MLflow
+- MinIO
+- Docker y Docker Compose
+
+## Contacto
+Para dudas o contribuciones, favor de abrir un issue o contactar al equipo de desarrollo.
+
