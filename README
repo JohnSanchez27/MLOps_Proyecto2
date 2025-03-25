@@ -4,6 +4,33 @@ Este repositorio contiene un sistema basado en Python para la gestión, procesam
 
 ## Estructura del Proyecto
 
+´´´´
+PROYECTO_2/
+|├── app_back/            # Lógica de backend y procesamiento de modelos
+|   |├── cargar_modelos.py  # Carga de modelos de ML
+|   |├── dockerfile         # Configuración de contenedor Docker para backend
+|   |└── main.py           # Punto de entrada del backend
+|├── app_front/           # Interfaz de usuario con Streamlit
+|   |├── app_streamlit.py # Aplicación Streamlit
+|   |├── dockerfile       # Configuración de contenedor Docker para frontend
+|   |└── requirements    # Dependencias del frontend
+|├── dags/               # DAGs de Apache Airflow para ETL
+|   |└── consumir_api.py  # DAG para consumir datos de una API
+|├── imagenes/            # Carpeta para almacenamiento de imágenes
+|├── jupyter/             # Entorno para notebooks Jupyter
+|   |├── datos/           # Archivos de datos
+|   |├── covertype.csv   # Dataset de covertype
+|   |├── dockerfile      # Configuración Docker para Jupyter
+|   |├── modelo.ipynb   # Notebook con entrenamientos de modelos
+|   |└── requirements   # Dependencias de Jupyter
+|├── minio_data/         # Almacenamiento de datos para MinIO
+|├── mlflow/             # Configuración de MLflow para tracking de modelos
+|   |├── dockerfile      # Configuración Docker para MLflow
+|   |└── requirements   # Dependencias de MLflow
+|├── docker-compose.yml  # Orquestación de servicios con Docker Compose
+|└── README              # Documentación del proyecto
+´´´´
+
 ### 1. **app_back**
    - `cargar_modelos.py`: Script para cargar modelos en el sistema.
    - `dockerfile`: Contenedor para la parte backend.
